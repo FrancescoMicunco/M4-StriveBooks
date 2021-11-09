@@ -5,18 +5,8 @@ import App from './App.jsx';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render( <
-    div >
-    <
-    App / >
-
-
-    <
-    document.getElementById('root') / >
-
-    <
-    /div>
-
-
+    App / > ,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
