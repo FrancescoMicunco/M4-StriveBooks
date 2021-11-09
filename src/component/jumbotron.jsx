@@ -1,8 +1,8 @@
 const MyJumbotron = ()=>(
     <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Strive - Resaurant</h1>
-    <p class="lead">You will think for all of your life</p>
+  <div class="Container ml-5">
+    <h1 class="display-4">Strive - Books</h1>
+    <p class="lead">All the best you can read</p>
   </div>
 </div>
 )
