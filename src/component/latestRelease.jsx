@@ -16,12 +16,8 @@ const Latestrelease =()=>(
       <p>Category: {e.category}</p>
     </Carousel.Caption>
   </Carousel.Item>
-
-
-
-   ) )
-   
-   
+   ))
+      
    }
     
   

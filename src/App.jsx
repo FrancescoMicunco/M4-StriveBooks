@@ -7,21 +7,16 @@ import Latestrelease from './component/latestRelease'
 
 function App() {
     return ( < div >
-        <
-        MyNavBar / >
-        <
-        MyJumbotron / >
+        <MyNavBar / >
+        <MyJumbotron / >
 
 
-        // <
-        // Latestrelease / >
+        <Latestrelease / >
 
 
-        <
-        MyFooter / >
+        <MyFooter / >
 
-        <
-        /div>
+        </div>
 
 
 
