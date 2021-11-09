@@ -1,30 +1,28 @@
-import {Carousel} from 'react-bootstrap'
+import { height } from 'dom-helpers'
+import {Card, Container, Row} from 'react-bootstrap'
 import books from '../db/scifi.json'
 
 const Latestrelease =()=>(
-   
- <Carousel style={{heigth:"180px"}}>{
-   
-   books.map(book =>
-<Carousel.Item >
-    <img 
-      className="d-block w-100"
-      
-      src={book.img}
-      alt="First slide"/>
-    <Carousel.Caption>
-      <h3>{book.title}</h3>
-      <p>Category: {book.category}</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-   )
-      
-   }
-    
-  
-</Carousel>
 
-    )
+  <Container >
+      <Row >
+   {books.map(book =>
+    
+        <div  className="Col-3 d-flex">
+
+<Card style={{ width: '10rem' }}>
+  <Card.Img variant="top" src={book.img} />
+  </Card>
+        </div>
+         )}
+      </Row>
+
+
+
+    </Container>
+    
+)
+     
    
 
 
