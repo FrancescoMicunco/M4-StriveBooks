@@ -1,17 +1,32 @@
 import { Card, Col } from 'react-bootstrap';
-import book from '../db/scifi.json'
+import {Component} from 'react'
 
-const SingleBook =([{book}])=>(
-<Col md={2} key={book.asin}>
+class SingleBook extends Component{
+    state={
+        
+    }
+    
+    render(){return(
+ SingleBook =(arr)=>(
+    
+<Col md={2} key={arr.asin}>
                             <Card className="bookCards">
-                                <Card.Img variant="top" src={this.book.img} height="250px" />
+                                <Card.Img variant="top" src={arr.img} height="250px" />
                                 <Card.Body>
-                                    <Card.Title className="bookTitle">{this.book.title}</Card.Title>
+                                    <Card.Title className="bookTitle">{arr.title}</Card.Title>
                                 </Card.Body>
                             </Card>
                         </Col>
-
+    
     
 )
+
+
+    )}
+}
+
+
+
+
 
 export default SingleBook

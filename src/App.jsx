@@ -6,12 +6,14 @@ import MyJumbotron from './component/jumbotron'
 import Latestrelease from './component/latestRelease'
 import warningSign from './component/warningSign';
 import BookList from './component/bookList'
+import SingleBook from './component/singleBook';
 
 function App() {
     return ( < div >
         <MyNavBar / >
         <MyJumbotron / >
-<BookList />
+        <BookList />
+        
         <Latestrelease / >
 
 
