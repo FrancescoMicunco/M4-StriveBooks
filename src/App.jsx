@@ -5,12 +5,13 @@ import MyFooter from './component/footer'
 import MyJumbotron from './component/jumbotron'
 import Latestrelease from './component/latestRelease'
 import warningSign from './component/warningSign';
+import BookList from './component/bookList'
 
 function App() {
     return ( < div >
         <MyNavBar / >
         <MyJumbotron / >
-
+<BookList />
         <Latestrelease / >
 
 
