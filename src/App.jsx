@@ -16,10 +16,7 @@ function App() {
             <WarningSign title="Pay Attention!"/>
 <MyBadge color="primary" text="SALE 50%" />
         <BookList />
-        
         <Latestrelease / >
-
-
         <MyFooter / >
 
         </div>
