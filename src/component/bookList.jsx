@@ -4,8 +4,18 @@ import SingleBook from '../component/singleBook.jsx'
 import books from '../db/scifi.json'
 
 const filterBookList=(arr)=>{
-let filteredBooks = arr.filter(element => element.title==="Pandemic (The Extinction Files, Book 1)")
-SingleBook(filteredBooks);
+arr.filter(element => element.title.include().map(e=>
+    <container>
+        <row>
+            <div className="card">
+                <img src={e.img} alt="" />
+                <h5>{e.title}</h5>
+            </div>
+        </row>
+    </container>
+    
+    ))
+
 
 }
 
