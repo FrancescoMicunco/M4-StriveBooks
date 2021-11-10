@@ -1,7 +1,7 @@
-import { Card, Col } from 'react-bootstrap';
-import {Component} from 'react'
+import { Card} from 'react-bootstrap';
+//import {Component} from 'react'
 
-class SingleBook extends Component{
+/* class SingleBook extends Component{
     state = {
         imgItem:"",
         titleitem:""
@@ -26,8 +26,21 @@ class SingleBook extends Component{
 
     )}
 }
-
-
+ */
+const SingleBook=({book})=>{
+    <container>
+        <row>
+            <div className="card">
+                <Card.Img variant="top" src={book.img} height="250px"/>     
+                <Card.Body>
+                                    <Card.Title className="bookTitle">{book.title}</Card.Title>
+                                </Card.Body>
+                
+            </div>
+        </row>
+    </container>
+    
+}
 
 
 
