@@ -1,6 +1,9 @@
+import Alert from './react-bootstrap/Alert'
 
-const warningSign=()=>(
-    
+const warningSign=(props)=>(
+    <Alert variant="danger">
+    {props.title}
+    </Alert>  
 )
 
 
