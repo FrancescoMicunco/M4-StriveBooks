@@ -1,13 +1,27 @@
-import Form from 'react-bootstrap/Form'
+import { Container, Row, Card, Col } from 'react-bootstrap'
+//import Form from 'react-bootstrap/Form'
 import SingleBook from '../component/singleBook.jsx'
-import books from '../db/scifi.json'
 
-const filterBookList=(arr, query)=>{
+
+
+const BookList = ( {books} )=>(
+<Container>
+<Row>
+    {books.map((e)=>
+    <SingleBook book={e}/>
+       
+    )}
+</Row>
+
+</Container>
+
+)
+/* const filterBookList=(arr, query)=>{
 let queryBookResult=arr.filter(bookQuery => bookQuery.title.include(query))
 console.log(queryBookResult)
 /* .map(book=>
     <SingleBook element={book}/>
-       )*/
+       )
 } 
 
 const BookList=()=>(
@@ -28,6 +42,6 @@ const BookList=()=>(
 
     
 )
-
+ */
 
 export default BookList

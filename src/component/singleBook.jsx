@@ -1,47 +1,15 @@
-import { Card} from 'react-bootstrap';
-//import {Component} from 'react'
+import {Card, Col} from 'react-bootstrap'
 
-/* class SingleBook extends Component{
-    state = {
-        imgItem:"",
-        titleitem:""
-
-    }
+const SingleBook = (props)=>(
+<Col sx={3}>
+<Card >
+  <Card.Img variant="top" src={props.book.img} />
+  <Card.Body>
+    <Card.Title>{props.book.title}</Card.Title>
     
-    render(){return(
- SingleBook =(arr)=>(
-    
-<Col md={2} key={arr.asin}>
-                            <Card className="bookCards">
-                                <Card.Img variant="top" src={this.state.imgItem.img} height="250px" />
-                                <Card.Body>
-                                    <Card.Title className="bookTitle">{this.state.title.title}</Card.Title>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-    
-    
+  </Card.Body>
+</Card>
+</Col>
 )
-
-
-    )}
-}
- */
-const SingleBook=({book})=>{
-    <container>
-        <row>
-            <div className="card">
-                <Card.Img variant="top" src={book.img} height="250px"/>     
-                <Card.Body>
-                                    <Card.Title className="bookTitle">{book.title}</Card.Title>
-                                </Card.Body>
-                
-            </div>
-        </row>
-    </container>
-    
-}
-
-
 
 export default SingleBook
