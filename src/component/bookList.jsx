@@ -1,43 +1,32 @@
 import { Container, Row, Form, Col } from 'react-bootstrap'
 import SingleBook from '../component/singleBook.jsx'
-import React from 'react'
-
-/* 
-const filterBookList=(arr, query)=>{
-arr.filter((b)=>b.title.include(query))
-.map((e=>{
-return }))}
- */
+import {Component} from 'react'
 
 
-class Booklist extends React.Component{
-render(){
-    state={
+class Booklist extends Component{
+
+state={
       itemState : ''
     }
-    return(
+
+render(){
+        return(
         <>
 <Container>
     <Row>
-<Form>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
-    <Form.Text className="text-muted">
-      We'll never share your email with anyone else.
-    </Form.Text>
-  </Form.Group>
-
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
+<Form >
+  <Form.Group className="mb-3" >
+    <Form.Label>Search by Title</Form.Label>
+    <Form.Control 
+    type="email" 
+    placeholder="Enter title" 
+    value = {this.state.itemState}
+    onChange={
+        e=>{this.setState({itemState:e.target.value})}
+    }
+        />
+     </Form.Group>
+ 
 </Form>
 
     </Row>
@@ -45,12 +34,12 @@ render(){
 </Container>
 
 
-
-// display section
+{/* // display section */}
 <Container>
 <Row>
     {
-    this.props.books.map(e=>
+    this.props.books.filter(b=>b.title.includes(this.state.itemState))
+    .map(e=>
     (<Col xs={6} md={3}>
        <SingleBook book={e}/> 
     </Col>))
@@ -59,14 +48,16 @@ render(){
 </Row>
 
 </Container>
+</>  
 )
 
-    
+  
 }
 
+
 }
 
 
- </>
+ 
 
 export default Booklist
