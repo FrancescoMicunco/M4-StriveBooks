@@ -20,7 +20,7 @@ class SingleBook extends Component{
 }
 
 fetchFunction=async ()=>{
-const res = await fetch("https://striveschool-api.herokuapp.com/api/comments/", {
+const res = await fetch("https://striveschool-api.herokuapp.com/api/comments/"+this.props.book.asin, {
 headers: {
 "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyOGQ1MWFhY2FhMjAwMTU1MmExNzUiLCJpYXQiOjE2MzY2NDAwMDcsImV4cCI6MTYzNzg0OTYwN30.1r54LazkgLREzT1_TEIEE0FuSEKO-RcLTPlod70DVo4"
 }
