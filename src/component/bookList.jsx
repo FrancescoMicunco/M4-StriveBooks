@@ -13,7 +13,7 @@ return }))}
 class Booklist extends React.Component{
 render(){
     state={
-      let  itemState = ''
+      itemState : ''
     }
     return(
         <>
