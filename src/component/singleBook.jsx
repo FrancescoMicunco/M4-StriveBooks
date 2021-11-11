@@ -16,7 +16,7 @@ class SingleBook extends Component{
 
 
     // COMPONENT DI MOUNT
-  componentDidMount =  ()=>{
+  /* componentDidMount =  ()=>{
       this.fetchFunction()
 }
 
@@ -35,7 +35,7 @@ this.setState({comments:books})
     }else{console.log("something wrong!")}
 }catch(error){console.log("Some about connection create an error")}
 
-}
+} */
 
 // RENDER AREA 
 
