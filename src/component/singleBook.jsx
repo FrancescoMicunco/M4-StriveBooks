@@ -1,5 +1,6 @@
-import {Card, Col, Form, Button} from 'react-bootstrap'
+import {Card, Col, Form} from 'react-bootstrap'
 import { Component } from 'react'
+import CommentArea from './CommentArea'
 
 
 
@@ -41,32 +42,20 @@ this.setState({comments:books})
     render=()=>{
         return(
 <>
+     <Col sx={3}></Col>
+            <Card onClick={()=>this.setState({selected:!this.state.selected})} 
+            style={{ border : this.state.selected? '3px solid gray' :'none' }}>
+                <Card.Img variant="top" src={this.props.book.img} />
+                <Card.Body>
+                <Card.Title>{this.props.book.title}</Card.Title>
+                 </Card.Body>
+            </Card>
 
-                <Col sx={3}>
-<Card onClick={()=>
-this.setState({selected:!this.state.selected})} 
 
-style={{ border : this.state.selected? '3px solid gray' :'none' }}>
-  <Card.Img variant="top" src={this.props.book.img} />
-  <Card.Body>
-    <Card.Title>{this.props.book.title}</Card.Title>
-      </Card.Body>
-</Card>
-<div className="mb-5" >
-
-<div style={{ display : this.state.selected? 'block' :'none' }}>
-    <h5 className="mr-3" style={{backgroundColor:'yellow'}}>  CommentArea</h5>
+{
+    this.state.selected && <CommentArea />
+    }
     
-    
-    <Button variant="primary" size="sm" onClick={(e)=>
-this.setState({id:this.props.book.id})}>
-      Comment list
-    </Button>{' '}
-   
-   
-   
-    <Button variant="secondary" size="sm">Add comment</Button>
-</div>
 
 
     <Form.Select aria-label="Default select example" style={{ display : this.state.selected? 'block' :'none' }}>
@@ -76,17 +65,11 @@ this.setState({id:this.props.book.id})}>
   <option value="3">Three</option>
 </Form.Select>
 
-</div>
 
-</Col>                   
+
 </>
-     )
-    }
-  
+              
+        )}
+
 }
-
-
-
-
-
 export default SingleBook
