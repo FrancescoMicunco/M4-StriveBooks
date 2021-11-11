@@ -7,7 +7,7 @@ import BookList from './component/bookList'
 import WarningSign from './component/warningSign'
 import MyBadge from './component/myBadge'
 import bookData from './db/scifi.json'
-import SingleBook from './component/singleBook'
+
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <MyJumbotron / >
             <WarningSign title="Pay Attention!"/>
 <MyBadge color="primary" text="SALE 50%" />
-<SingleBook book={bookData[0]}/>
+
         <BookList books={bookData}/>
              <MyFooter / >
         </div>
