@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import {Button, Form} from 'react-bootstrap'
-import AddComment from './AddComment'
-import CommentsList from './CommentsList'
+// import AddComment from './AddComment'
+// import CommentsList from './CommentsList'
 
 
 
@@ -14,8 +14,8 @@ state={
 render=()=>{
     return (
     <div className="mb-3 py-2  text-center" style={{backgroundColor:'yellow'}}>
-    <AddComment />
-    <CommentsList />
+    {/* <AddComment />
+    <CommentsList /> */}
     {/* <Button variant="secondary" size="sm" className="mb-2 ml-2">Add comment</Button> */}
     <Button variant="primary" size="sm" className="mb-2 ml-2">Comment list </Button>
     <Form.Select aria-label="Default select example" >

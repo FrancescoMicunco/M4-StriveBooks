@@ -7,7 +7,10 @@ import BookList from './component/bookList'
 import WarningSign from './component/warningSign'
 import MyBadge from './component/myBadge'
 import bookData from './db/scifi.json'
+import MainComponent from './component/mainComponent';
+import { Container, Row, Col } from 'react-bootstrap';
 
+import CommentsList from './component/CommentsList'
 
 
 function App() {
@@ -18,8 +21,21 @@ function App() {
         <MyJumbotron / >
             <WarningSign title="Pay Attention!"/>
 <MyBadge color="primary" text="SALE 50%" />
+<Container>
+    <Row>
+        <Col >
+            <h1>Books Area</h1>
+            <BookList books={bookData}/>
+        </Col>
 
-        <BookList books={bookData}/>
+
+    </Row>
+</Container>
+
+
+
+
+        
              <MyFooter / >
         </div>
     );

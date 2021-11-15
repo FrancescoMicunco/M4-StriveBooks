@@ -37,14 +37,25 @@ render(){
 {/* // display section */}
 <Container>
 <Row>
-    {
+    <Col sx={12} md={8}>
+        <Row>
+            {
     this.props.books.filter(b=>b.title.includes(this.state.itemState))
     .map(e=>
-    (<Col xs={6} md={3}>
+        
+        <Col md={3}>
        <SingleBook book={e}/> 
-    </Col>))
-    }
+    </Col> 
     
+   )}
+        </Row>
+    </Col>
+    <Col sx={12} md={4}>
+    <h1>Comments</h1>
+    </Col>
+
+
+
 </Row>
 
 </Container>
