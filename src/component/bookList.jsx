@@ -1,12 +1,14 @@
 import { Container, Row, Form, Col } from 'react-bootstrap'
 import SingleBook from '../component/singleBook.jsx'
 import {Component} from 'react'
+import CommentsList from './CommentsList.jsx'
 
 
 class Booklist extends Component{
 
 state={
-      itemState : ''
+      itemState : '',
+      id:''
     }
 
 render(){
@@ -37,21 +39,26 @@ render(){
 {/* // display section */}
 <Container>
 <Row>
-    <Col sx={12} md={8}>
+    <Col sx={12} md={9}>
         <Row>
             {
     this.props.books.filter(b=>b.title.includes(this.state.itemState))
     .map(e=>
         
-        <Col md={3}>
-       <SingleBook book={e}/> 
-    </Col> 
+        <Col md={4}>
+           <SingleBook book={e}/> 
+        </Col> 
     
    )}
         </Row>
     </Col>
-    <Col sx={12} md={4}>
+    <Col sx={12} md={3}>
     <h1>Comments</h1>
+    <ul>
+
+
+<CommentsList id={this.state.id}/>
+</ul>
     </Col>
 
 
