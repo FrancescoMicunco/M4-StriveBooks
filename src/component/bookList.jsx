@@ -55,9 +55,7 @@ render(){
     <Col sx={12} md={3}>
     <h1>Comments</h1>
     <ul>
-
-
-<CommentsList id={this.state.id}/>
+<CommentsList />
 </ul>
     </Col>
 
