@@ -2,7 +2,7 @@ import { Card, Col } from "react-bootstrap";
 import React, { useState } from "react";
 
 const SingleBook = (props) => {
-  const [Selected, setSelected] = useState(false);
+//   const [Selected, setSelected] = useState(false);
   const [border, setborder] = useState("");
   const [isActive, setisActive] = useState();
   const [Id, setId] = useState("");
@@ -18,13 +18,12 @@ const SingleBook = (props) => {
             setSelected(!Selected);
             setId(props.book.asin);
           }}
-          style={{ setborder: Selected ? "3px solid gray" : "none" }}
+          style={{ setborder: props.Selected ? "3px solid gray" : "none" }}
         >
           <Card.Img variant="top" src={props.book.img} />
           <Card.Body>
             <Card.Title>{props.book.title}</Card.Title>
-            <Card.Title>{Id}</Card.Title>
-          </Card.Body>
+            </Card.Body>
         </Card>
       </Col>
     </>

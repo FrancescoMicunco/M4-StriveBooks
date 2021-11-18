@@ -1,4 +1,4 @@
-import {Container, form, Row, Form} from 'react-bootstrap'
+import {Container, Row, Form} from 'react-bootstrap'
 import { useState } from 'react';
 
 
@@ -18,6 +18,7 @@ return (
             value={Item}
             onChange={(e) => {
               setItem(e.target.value);
+              console.log(Item)
             }}
           />
         </Form.Group>

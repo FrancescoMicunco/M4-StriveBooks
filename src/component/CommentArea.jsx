@@ -13,17 +13,14 @@ state={
 
 render=()=>{
     return (
-    <div className="mb-3 py-2  text-center" style={{backgroundColor:'yellow'}}>
-    {/* <AddComment />
-    <CommentsList /> */}
-    {/* <Button variant="secondary" size="sm" className="mb-2 ml-2">Add comment</Button> */}
-    <Button variant="primary" size="sm" className="mb-2 ml-2">Comment list </Button>
-    <Form.Select aria-label="Default select example" >
-  <option>Rating</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</Form.Select>
+<Col sx={12} md={3}>
+            <h1>Comments</h1>
+            <ul>
+              <CommentsList asin={books.asin} />
+            </ul>
+          </Col>
+
+    
     </div>
     )
 }
