@@ -3,29 +3,31 @@ import { Component } from "react";
 class CommentsList extends Component{
    
     state={
-        id:null,
+        asin:null,
         comments:[]
     }
 
 
-componentDidMount=()=>{
-    
+
+componentDidUpdate=(prevProps)=>{
+if(this.props.prevProps.asin!== this.state.asin){
     this.takeComments()
 }
-
-componentDidUpdate=(prevProps, prevState)=>{
 
 }
 
 takeComments =async()=>{
     let url = "https://striveschool-api.herokuapp.com/api/comments/"
-
-this.setState({id: this.props.id})
-
-    let res = await fetch(url+this.state.id, {
-headers: {
+let headers = {
 "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyOGQ1MWFhY2FhMjAwMTU1MmExNzUiLCJpYXQiOjE2MzY2NDAwMDcsImV4cCI6MTYzNzg0OTYwN30.1r54LazkgLREzT1_TEIEE0FuSEKO-RcLTPlod70DVo4"
-}}) 
+}
+
+
+
+this.setState({id: this.props.asin})
+
+    let res = await fetch(url+1626392242, {
+headers }) 
     try{
         if(res.ok){
         let data = await res.json()
@@ -40,8 +42,8 @@ alert("bad request")
 render = () =>{
  
     return(
-        this.comments.map(comment =>
-            <li>{this.state.comments}</li>
+        this.state.comments.map(comment =>
+            <li>{this.comment}</li>
         )
 
     )
