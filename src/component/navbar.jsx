@@ -1,16 +1,20 @@
 import {Navbar, Container, Nav} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
+
+
+
+
 
 const MyNavBar = () => (
   <Navbar bg="dark" variant="dark">
     <Container>
       <Nav className="me-auto text-light">
+        <Link to="/">
+          <div className="nav-link">Home</div>
+        </Link>
         
-        <div></div>
-        <div>About</div>
-        <div>Browse</div>
-        <Link to="registrationForm">
-          <div classname="nav-link">Register here</div>
+        <Link to="/register">
+          <div className="nav-link">Register</div>
         </Link>
       </Nav>
     </Container>
