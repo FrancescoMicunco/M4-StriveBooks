@@ -1,79 +1,43 @@
-import { Container, Row, Form, Col } from 'react-bootstrap'
-import SingleBook from '../component/singleBook.jsx'
-import {Component} from 'react'
-import CommentsList from './CommentsList.jsx'
+import { Container, Row, Form, Col } from "react-bootstrap";
+import SingleBook from "../component/singleBook.jsx";
+import { Component } from "react";
+import CommentsList from "./CommentsList.jsx";
+import { useState } from "react";
+import SearchForm  from "./SearchForm";
+import books from "../db/scifi.json";
 
+const Booklist = () => {
+  const [Item, setItem] = useState("");
+  const [Id, setId] = useState("");
 
-class Booklist extends Component{
+  return (
+    <>
+     
 
-state={
-      itemState : '',
-      id:''
-    }
-
-render(){
-        return(
-        <>
-<Container>
-    <Row>
-<Form >
-  <Form.Group className="mb-3" >
-    <Form.Label>Search by Title</Form.Label>
-    <Form.Control 
-    type="email" 
-    placeholder="Enter title" 
-    value = {this.state.itemState}
-    onChange={
-        e=>{this.setState({itemState:e.target.value})}
-    }
-        />
-     </Form.Group>
- 
-</Form>
-
-    </Row>
-
-</Container>
-
-
-{/* // display section */}
-<Container>
-<Row>
-    <Col sx={12} md={9}>
+      {/* // display section */}
+      <Container>
         <Row>
-            {
-    this.props.books.filter(b=>b.title.includes(this.state.itemState))
-    .map(e=>
-        
-        <Col md={4}>
-           <SingleBook book={e}/> 
-        </Col> 
-    
-   )}
+          <Col sx={12} md={9}>
+            <Row>
+              {books
+                .filter((b) => b.title.includes(Item))
+                .map((e) => (
+                  <Col md={4}>
+                    <SingleBook book={e} />
+                  </Col>
+                ))}
+            </Row>
+          </Col>
+          <Col sx={12} md={3}>
+            <h1>Comments</h1>
+            <ul>
+              <CommentsList />
+            </ul>
+          </Col>
         </Row>
-    </Col>
-    <Col sx={12} md={3}>
-    <h1>Comments</h1>
-    <ul>
-<CommentsList />
-</ul>
-    </Col>
+      </Container>
+    </>
+  );
+};
 
-
-
-</Row>
-
-</Container>
-</>  
-)
-
-  
-}
-
-
-}
-
-
- 
-
-export default Booklist
+export default Booklist;

@@ -3,11 +3,11 @@ import { useState } from "react";
 
 const Registration = () => {
 
-const [Name, stateName]= useState('')
-const [Surname, stateSurname] = useState("");
-const [Name, stateName] = useState("");
-const [Name, stateName] = useState("");
-const [Name, stateName] = useState("");
+// const [Name, stateName]= useState('')
+// const [Surname, stateSurname] = useState("");
+// const [Name, stateName] = useState("");
+// const [Name, stateName] = useState("");
+// const [Name, stateName] = useState("");
 
     return (
         <div className="text-center mt-4">
@@ -48,3 +48,54 @@ const [Name, stateName] = useState("");
 }
 
 export default Registration;
+
+
+
+
+
+
+// import React from "react";
+// import { useForm } from "react-hook-form";
+// import { yupResolver } from "@hookform/resolvers/yup";
+// import * as yup from "yup";
+
+// const schema = yup
+//   .object({
+//     Name: yup.string().required(),
+//     Surname: yup.string().required(),
+//     email: yup.string().required(),
+//     Password: yup.string().required(),
+//     Confirm_Password: yup.string().required(),
+//   })
+//   .required();
+
+// const Registration = () => {
+//   const {
+//     register,
+//     handleSubmit,
+//     formState: { errors },
+//   } = useForm({
+//     resolver: yupResolver(schema),
+//   });
+//   const onSubmit = (data) => console.log(data);
+
+//   return (
+//     <form onSubmit={handleSubmit(onSubmit)}>
+//       <input {...register("Name")} />
+//       <p>{errors.Name?.message}</p>
+
+//       <input {...register("Surname")} />
+//       <p>{errors.Surname?.message}</p>
+//       <input {...register("email")} />
+//       <p>{errors.email?.message}</p>
+
+//       <input {...register("Password")} />
+//       <p>{errors.password?.message}</p>
+
+//       <input {...register("Confirm_Password")} />
+//       <p>{errors.Confirm_Password?.message}</p>
+
+//       <input type="submit" />
+//     </form>
+//   );
+// };

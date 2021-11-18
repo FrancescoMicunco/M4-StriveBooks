@@ -13,7 +13,7 @@ const Home = ()=> {
         <WarningSign />
         <MyBadge />
         <Booklist />
-        <CommentsList />
+        {/* <CommentsList /> */}
 </>
     )
 }
