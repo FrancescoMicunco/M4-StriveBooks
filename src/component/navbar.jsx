@@ -2,9 +2,6 @@ import {Navbar, Container, Nav} from 'react-bootstrap'
 import {Link, useLocation} from 'react-router-dom'
 
 
-
-
-
 const MyNavBar = () => (
   <Navbar bg="dark" variant="dark">
     <Container>
@@ -12,10 +9,13 @@ const MyNavBar = () => (
         <Link to="/">
           <div className="nav-link">Home</div>
         </Link>
-        
-        <Link to="/register">
-          <div className="nav-link">Register</div>
+        <Link to="/about">
+          <div className="nav-link">About</div>
         </Link>
+        <Link to="/browse">
+          <div className="nav-link">Browse</div>
+        </Link>
+
       </Nav>
     </Container>
   </Navbar>
