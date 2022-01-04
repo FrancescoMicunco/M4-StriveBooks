@@ -2,7 +2,7 @@ import {Container, Row, Form} from 'react-bootstrap'
 import { useState } from 'react';
 
 
-const SearchForm = ()=>{
+const SearchForm = ({title})=>{
 
 const [Item, setItem] = useState('');
 return (
@@ -17,8 +17,8 @@ return (
             placeholder="Enter title"
             value={Item}
             onChange={(e) => {
-              setItem(e.target.value);
-              console.log(Item)
+            setItem(e.target.value);
+              
             }}
           />
         </Form.Group>
