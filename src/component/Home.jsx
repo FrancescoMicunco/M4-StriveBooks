@@ -10,10 +10,12 @@ import books from '../db/scifi.json'
 const Home = ()=> {
     const [Asin, stateAsin]= useState('')
     const [SelectedAsin, stateSelectedAsin] = useState("");
+    const [title, setTitle] = useState('')
     return (
       <>
         <MyJumbotron />
         <WarningSign />
+        
         <MyBadge />
         <Booklist  books={books}/>
         {/* <CommentsArea selectedAsin={SelectedAsin} /> */}
