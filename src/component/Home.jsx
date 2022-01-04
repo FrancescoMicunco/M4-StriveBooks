@@ -1,10 +1,9 @@
 import Booklist from "./bookList";
 import MyJumbotron from "./jumbotron";
 import MyBadge from "./myBadge";
-import CommentsArea from "./CommentsArea";
 import WarningSign from "./warningSign";
 import React, { useState, useEffect } from 'react'
-
+import books from '../db/scifi.json'
 
 
 const Home = ()=> {
@@ -13,8 +12,8 @@ const Home = ()=> {
       <>
         <MyJumbotron />
         <WarningSign />
-        <Booklist asin={Asin} selectedAsin={SelectedAsin} />
-       
+        <MyBadge />
+        <Booklist  books={books}/>
       </>
     );
 }
