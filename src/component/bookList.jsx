@@ -12,14 +12,13 @@ const Booklist = ({books}) => {
 
   <h2>Books Title</h2>
   <Container>
-    <Row >
-      <Col sx={12} md={9} style={{boxSizing:"border-box", flexWrap:"nowrap"}}>
-        <SingleBook book={books}/>
-      </Col>
+    <Row >{books.map(b=>
+      <Col sx={12} md={3}>
+        <SingleBook book={b}/>
+      </Col>)}
     </Row>
   </Container>
-  
-  
+   
    </>
   )
 };

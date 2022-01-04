@@ -9,19 +9,19 @@ const SingleBook = ({book}) => {
   const [Id, setId] = useState("");
   const [comments, setcomments] = useState([]);
 
-  // ================  RENDER AREA
+  // ================RENDER AREA
 
   return (
     
     <>
-      <Col sx={6} md={3}>{book.map(book=>
+      
         <Card>
           <Card.Img variant="top" src={book.img} />
           <Card.Body>
             <Card.Title>{book.title}</Card.Title>
             </Card.Body>
-        </Card>)}
-      </Col>
+        </Card>
+      
     </>
   );
 };
