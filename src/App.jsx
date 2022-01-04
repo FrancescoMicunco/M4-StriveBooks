@@ -12,8 +12,10 @@ function App() {
     <BrowserRouter>
       <MyNavBar />
       <Routes>
-        <Route path="/register" element={<Registration />} />
+        
         <Route path="/" element={<Home />} />
+        {/* <Route path="/about" element={<About />} /> */}
+        {/* <Route path="/browse" element={<Browse />} /> */}
         <Route path="*" element={<h2>page not found</h2>} />
       </Routes>
       <MyFooter />
