@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Booklist = ({books}) => {
   const [Item, setItem] = useState('');
-    
+    console.log("Books from booklist",books)
   return (
     <>
 <Container>

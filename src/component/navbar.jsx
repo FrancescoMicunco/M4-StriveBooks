@@ -15,7 +15,7 @@ const MyNavBar = () => (
         <Link to="/browse">
           <div className="nav-link">Browse</div>
         </Link>
-
+        
       </Nav>
     </Container>
   </Navbar>
