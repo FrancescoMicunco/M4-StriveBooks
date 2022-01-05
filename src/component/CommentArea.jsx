@@ -13,7 +13,11 @@ let headers = {
 };
 const url = "https://striveschool-api.herokuapp.com/api/comments/"
 
-const getComments = async ()=>{
+
+
+
+useEffect(()=>{
+  const getComments = async ()=>{
   const res = await fetch(url, {headers})
   try {if(res.ok){
   const comments= await res.json()
@@ -22,7 +26,9 @@ const getComments = async ()=>{
   } catch (error) {
     console.log("something goes wrong")
   }}
-useEffect(()=>{getComments()}, [])
+  
+  
+  getComments()}, [])
 
    return (
           <Col sx={12} >
