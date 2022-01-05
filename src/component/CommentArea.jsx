@@ -3,44 +3,39 @@ import {Col, Button} from 'react-bootstrap'
 import CommentsList from '../component/CommentsList'
 import { useEffect, useState} from 'react'
 
-const CommentArea = (props)=>{
-console.log("this is props from comment area", props.id )
-  const [comments, setComments]=useState([])
-
-  const getComments = async (id) => {
-    
-    let headers = {
-      Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyOGQ1MWFhY2FhMjAwMTU1MmExNzUiLCJpYXQiOjE2NDEyODIzMTYsImV4cCI6MTY0MjQ5MTkxNn0.6iYNJ5P3WYjLBc_-n0eH4yoCDkgwwlk6NTzKL_OmtiA",
-    };
-
-    let res = await fetch(`https://striveschool-api.herokuapp.com/api/comments/`+id, {
-      headers,
-    });
-    try {
-      if (res.ok) {
-        let data = await res.json();
-        console.log("those are data",data.comment)
-       setComments(data)
-      } else {
-        alert("bad request");
-      }
-    } catch (error) {
-      console.log("Something wrong on your connection or server connection");
-    }
-  };
-
-useEffect(()=>{getComments(props.id)}, [])
+const CommentArea = (asin)=>{
+const [comments, setComments]=useState([])
 
 
-    return (
+let headers = {
+  Authorization:
+  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyOGQ1MWFhY2FhMjAwMTU1MmExNzUiLCJpYXQiOjE2NDEyODIzMTYsImV4cCI6MTY0MjQ5MTkxNn0.6iYNJ5P3WYjLBc_-n0eH4yoCDkgwwlk6NTzKL_OmtiA",
+};
+const url = "https://striveschool-api.herokuapp.com/api/comments/"
+
+const getComments = async ()=>{
+  const res = await fetch(url, {headers})
+  try {if(res.ok){
+  const comments= await res.json()
+  setComments(comments)
+}    
+  } catch (error) {
+    console.log("something goes wrong")
+  }}
+useEffect(()=>{getComments()}, [])
+
+   return (
           <Col sx={12} >
             <h3>Comments</h3>
             <Button>add</Button>
-            <ul>{
-               <CommentsList comments={comments} />
+            <ul>
+              {
+                comments.filter(i=>i.elementId===`${asin.asin}`).map(e=>
+                  <li>{e.comment}</li>)
+
+                  // <CommentsList comments={comments} asin={asin.asin}/>
               }
-            </ul>
+             </ul>
           </Col>
    )
 }
