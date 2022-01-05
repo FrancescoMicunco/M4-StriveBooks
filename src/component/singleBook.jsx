@@ -14,7 +14,7 @@ const SingleBook = ({book}) => {
   return (
     
     <>
-        <Card onClick={()=> {setSelected(!selected); setAsin(book.asin); console.log("This is asin of selected book",asin)}}        
+        <Card onClick={()=> {setSelected(!selected); setAsin(book.asin)}}        
 style={{border: selected ? "2px solid gray" : "none"}}
 
        >
